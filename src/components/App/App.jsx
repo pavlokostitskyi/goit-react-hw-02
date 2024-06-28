@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Feedback from '../Feedback/Feedback'
 import Options from '../Options/Options'
 import Notification from '../Notification/Notification'
+import  Description  from "../Description/Description";
 import styles from './App.module.css'
 
 
@@ -45,8 +46,7 @@ const App = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
+      <Description/>
       <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} resetFeedback={resetFeedback} />
       {totalFeedback > 0 ? (
         <Feedback feedback={feedback} total={totalFeedback} positivePercentage={positiveFeedbackPercentage} />
